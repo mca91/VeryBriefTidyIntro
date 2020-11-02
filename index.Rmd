@@ -65,6 +65,13 @@ exclude: true
 
 ---
 class: center middle
+
+You may access these slides [online at Netlify](https://tidyintro.netlify.app/#1) (https://tidyintro.netlify.app/) via any browser. 
+
+A PDF version is also available on [Moodle](https://moodle.uni-due.de/course/view.php?id=6199).
+
+---
+class: center middle
 ## 🚀 Please load the [tidyverse](https://www.tidyverse.org/)!🚀
 
 
