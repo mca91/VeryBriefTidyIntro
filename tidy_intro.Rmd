@@ -1,5 +1,5 @@
 ---
-title: "Statistical Learning"
+title: "Advanced Econometrics: Statistical Learning"
 subtitle: "A (very) brief introduction to the tidyverse"
 author: "Martin C. Arnold"
 date: "`r Sys.Date()`"
@@ -25,7 +25,7 @@ output:
       navigation:
         scroll: false # disable slide transitions by scrolling
 params:
-  semester: "Summer 2020"
+  semester: "Winter 2020"
 ---
 
 ```{r setup, include=FALSE}
@@ -44,7 +44,9 @@ class: title-slide center middle
 ### `r params$semester`
 
 ---
+exclude: true
 ## Schedule
+ 
 
 - 10:00 am &mdash; 12:00 am:
 
@@ -63,7 +65,7 @@ class: title-slide center middle
 
 ---
 class: center middle
-## 🚀 Now please load the [tidyverse](https://www.tidyverse.org/) 🚀
+## 🚀 Please load the [tidyverse](https://www.tidyverse.org/)!🚀
 
 
 ---
@@ -98,21 +100,24 @@ class: left, top
 
 <br>
 
+`ggplot2` in a nutshell:
+
 - R package for data visualization 
 - implementation of the [Grammar of Graphics](https://www.springer.com/de/book/9781475731002) in R
 
 Some interesting links: 
 
 - [R for Data Science](http://r4ds.had.co.nz/) 
-- [ggplot2: Elegant graphics for data Analysis](http://moderngraphics11.pbworks.com/f/ggplot2-Book09hWickham.pdf)
+- [ggplot2: Elegant Graphics for Data Analysis](http://moderngraphics11.pbworks.com/f/ggplot2-Book09hWickham.pdf)
 - [R Graphics Cookbook](http://www.cookbook-r.com/Graphs/)
+- Learn the basics @ [DataCamp](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 
 ---
 class: left, top
-## `ggplot2` &mdash; A Basic Example
+## `ggplot2` &mdash; a basic example
 
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Exercise: Scatterplot
+#### `r icon::fa("desktop")` Exercise: scatterplot
 
 ```{r, echo = TRUE, eval = FALSE}
 library(ggplot2)
@@ -136,10 +141,10 @@ ggplot(data = ___, mapping = aes(x = ___, y = ___)) +
 
 ---
 class: left, top
-## `ggplot2` &mdash; A Basic Example
+## `ggplot2` &mdash; a basic example &mdash; ctd.
 
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Exercise: Multiple Layers
+#### `r icon::fa("desktop")` Exercise: multiple layers
 
 Add an additional `geom` that performs **lo**cally **e**stimated **s**catterplot **s**moothing.
 
@@ -177,7 +182,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
 
 ---
 class: left, top
-## `ggplot2` &mdash; Aesthetics
+## `ggplot2` &mdash; aesthetics
 
 <br>
 <br>
@@ -185,7 +190,7 @@ class: left, top
 
 Each geom has its own set of aesthetics. `geom_point()` requires `x` and `y`, see `?geom_point()`.
 
-Let's add some additional mappings (variables are *mapped* to aesthetics).
+Let's add some additional mappings (we say that variables are *mapped* to aesthetics).
 
 ```{r, echo = TRUE, eval = FALSE}
 ggplot(diamonds, 
@@ -203,7 +208,7 @@ ggplot(diamonds,
 
 ---
 class: left, top
-## `ggplot2` &mdash; Aesthetics
+## `ggplot2` &mdash; aesthetics &mdash; ctd.
 
 ```{r, echo = F, eval = TRUE, fig.align='center', fig.height=5, fig.width=10, dpi = 300}
 ggplot(diamonds, 
@@ -218,7 +223,7 @@ ggplot(diamonds,
 
 ---
 class: left, top
-## `ggplot2` &mdash; Aesthetics
+## `ggplot2` &mdash; aesthetics &mdash; ctd.
 
 <br>
 <br>
@@ -236,7 +241,7 @@ ggplot(diamonds) +
 
 ---
 class: left, top
-## `ggplot2` &mdash; Aesthetics
+## `ggplot2` &mdash; aesthetics &mdash; ctd.
 
 Let's add some complexity:
 
@@ -251,7 +256,7 @@ ggplot(diamonds) +
 
 ---
 class: left, top
-## `ggplot2` &mdash; Aesthetics
+## `ggplot2` &mdash; aesthetics &mdash; ctd.
 
 We may use facetting to get a less cluttered result:
 
@@ -267,9 +272,9 @@ ggplot(diamonds) +
 
 ---
 class: left, top
-## `ggplot2` &mdash; Aesthetics
+## `ggplot2` &mdash; aesthetics &mdash; ctd.
 
-We may use facetting to get a more readable result:
+We may use facetting to get a less cluttered result:
 
 ```{r, echo = F, eval = TRUE, fig.align='center', fig.height=4, fig.width=9, dpi = 300}
 ggplot(diamonds) + 
@@ -305,7 +310,7 @@ ggplot(diamonds) +
 ---
 class: title-slide title-wrangling center middle
 
-## Transformation using `dplyr`/`tidyr`
+## Data Wrangling using `dplyr` and `tidyr`
 
 
 ---
@@ -315,17 +320,21 @@ class: title-slide title-wrangling center middle
 <br>
 <br>
 
-- `dplyr` package is the most important package of the `tidyverse` when it comes to data manipulation and transformation. 
+- The `dplyr` package is the most important package of the `tidyverse` when it comes to data manipulation and transformation. 
 
-- *data wrangling* : (dataframe in &rarr; transform &rarr; dataframe out)
+- *Data Wrangling* : (data.frame in &rarr; transform &rarr; data.frame out)
 
-- more verbose but also easier to understand than in base R 
+- *Database queries* : more verbose but also easier to understand than in base R 
+
+- `dplyr` is fast: the data.frame interface uses *c++*
 
 ---
-## `dplyr` &mdash; Verbs
+## `dplyr` &mdash; verbs
 
 <br>
 <br>
+
+We will often use these verbs in together with the `%>%` operator:
 
 - `select()` picks *variables* based on name
 - `filter()` picks *observations* based on value(s)
@@ -334,10 +343,9 @@ class: title-slide title-wrangling center middle
 - `arrange()` changes ordering of *observations*
 - `group_by()` group *observations* by *levels / values*
 
-We will often use the above verbs in conjunction with the `%>%` operator.
 
 ---
-## `dplyr` &mdash; Verbs
+## `dplyr` &mdash; verbs &mdash; ctd.
 
 <br>
 
@@ -347,7 +355,7 @@ We will often use the above verbs in conjunction with the `%>%` operator.
 
 1. Select variables `clarity`, `carat`, and `cut` from the `diamonds` dataset, then
 
-2. filter for diamonds that have a clarity rating `VS2`. Compute the average value of carat for the selected diamonds.  
+2. filter for diamonds that have clarity rating `VS2`. Compute the average value of carat for the selected diamonds.  
 
 3. Compute the average value of `carat` for the selected diamonds.
 
@@ -362,7 +370,7 @@ summarized <- summarize(filtered, mean_carat = ___(___))
 ]
 
 ---
-## `dplyr` &mdash; Verbs
+## `dplyr` &mdash; verbs &mdash; ctd.
 
 <br>
 <br>
@@ -382,7 +390,7 @@ diamonds %>%
 ]
 
 ---
-## `dplyr` &mdash; Verbs
+## `dplyr` &mdash; verbs &mdash; ctd.
 
 <br>
 <br>
@@ -391,16 +399,16 @@ diamonds %>%
 #### `r icon::fa("desktop")` Exercises: `dplyr` verbs &mdash; 1
 
 
-Chain the following steps using the `%>%` operator:
+Chain the following operations using the `%>%` operator:
 
-1. Pick variables `name`, `vore`, `sleep_total`, `brainwt`, and `sleep_rem` from the `msleep` dataset
-2. Add a new variable `rem_share` = `sleep_rem` / `sleep_total`
-3. Save the result in `msleep_new`
+1. pick variables `name`, `vore`, `sleep_total`, `brainwt`, and `sleep_rem` from the `msleep` dataset
+2. add a new variable `rem_share` = `sleep_rem` / `sleep_total`
+3. save the result in `msleep_new`
 
 ]
 
 ---
-## `dplyr` &mdash; Verbs
+## `dplyr` &mdash; verbs &mdash; ctd.
 
 <br>
 <br>
@@ -408,12 +416,12 @@ Chain the following steps using the `%>%` operator:
 .blockquote.exercise[
 #### `r icon::fa("desktop")` Exercises: `dplyr` verbs &mdash; 2
 
-Chain the following steps using the `%>%` operator:
+Chain the following operations using the `%>%` operator:
 
-1. Sort `msleep_new` from the previous exercise by `rem_share` in descending order
+1. sort `msleep_new` from the previous exercise by `rem_share` in descending order
 2. group by `vore`
-3. Drop all rows in `msleep_new` that contain missing values
-4. Compute the average of `rem_share` per group in `vore`
+3. drop all rows in `msleep_new` that contain missing values
+4. compute the average of `rem_share` per group in `vore`
 
 ]
 
@@ -425,19 +433,21 @@ Chain the following steps using the `%>%` operator:
 
 `tidyr` in a nutshell: 
 
-Toolkit for getting data in the below format...
+A toolkit for getting data in the below format...
 
 ![:image 80%](assets/tidydata.png)
 
 ... or to convert to *wider* / *longer* formats.
 
 ---
-## `tidyr`
+## `tidyr` &mdash; ctd.
 
 <br>
 <br>
 
-Numeric values in the below table represent incidents of a rare lung desease. Is the dataset tidy? Explain why (not).
+Numeric values in the below table represent incidents of a rare lung desease. 
+
+Is the dataset tidy? Explain why (not).
 
 ```{r, eval = T}
 dat <- tibble(
@@ -453,7 +463,7 @@ dat <- tibble(
 
 <br>
 
-We may make `dat` *longer* using `tidyr::pivot_longer()`:
+We can make `dat` *longer* using `tidyr::pivot_longer()`:
 
 ```{r, eval = T}
 dat %>% pivot_longer(cols = `1999`:`2000`, names_to = "year", values_to = "cases")
@@ -465,14 +475,19 @@ class: title-slide title-purrr center middle
 
 ## Iteration using `purrr`
 
-
 ---
-## Recap  &mdash; Iteration using Loops
+## Recap  &mdash; iteration using loops
 
 <br>
+
+```
+for(i in <index_set>) {
+ # do something
+}
+```
+
 <br>
-<br>
-<br>
+
 **Loops ...**
 
 - make it relatively cumbersome to harness the power of iteration
@@ -502,7 +517,7 @@ class: title-slide title-purrr center middle
 <br>
 <br>
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Definition: Functional
+#### `r icon::fa("desktop")` Definition: functional
 A functional takes a function (along with data) as input and returns a vector as output.
 
 Prominent base R functionals are the `*apply()` functions.
@@ -522,7 +537,7 @@ Prominent base R functionals are the `*apply()` functions.
 
 - avoid inefficient or faulty iteration 
 
-- convey what they do and what kind of output they produce
+- convey what kind of iteration is done and what kind of output to expect
     
 ???
 
@@ -541,7 +556,7 @@ Prominent base R functionals are the `*apply()` functions.
 
 <br>
 
-Map takes a vector and a function. The result is a list consisting of elements computed by applying the function *element-wise*.
+`map()` takes a vector and a function as arguments. The result is a list of elements obtained by applying the function *element-wise* to the vector.
 
 .blockquote.exercise[
 **`map()` &mdash; vector in, list out:**
@@ -554,7 +569,7 @@ Map takes a vector and a function. The result is a list consisting of elements c
 - `map()` returns a list.
 
 ---
-## Iteration with functionals &mdash; `purrr::map()`
+## Iteration with functionals &mdash; `purrr::map()` &mdash; ctd.
 
 <br>
 
@@ -569,18 +584,18 @@ x <- 1:3
 Double <- function(z) 2 * z
 ```
 
-1. Write a loop that applies the function `double()` to each element-wise to the vector `x` and returns the result in a `list`.
+1. Write a `for` loop that applies the function `double()` element-wise to the vector `x` and returns the result in a `list`.
 
 2. Implement a solution using `map()`.
 
 ]
 
 ---
-## Iteration with functionals &mdash; `purrr::map()`
+## Iteration with functionals &mdash; `purrr::map()` &mdash; ctd.
 
 .smaller[
 
-Using *anonymous functions* with `map()` will be convenient:
+Using *anonymous functions* with `map()` is very convenient:
 
 .blockquote.exercise[
 **`map()` &mdash; using anonymous functions:**
@@ -599,7 +614,7 @@ map(x, ~ abs(.))
 ]]
 
 ---
-## Iteration with functionals &mdash; `purrr::map()`
+## Iteration with functionals &mdash; `purrr::map()` &mdash; ctd.
 
 .blockquote.exercise[
 **`map()` &mdash; using anonymous functions:**
@@ -617,9 +632,9 @@ x %>% map(~ abs(.))
 
 <br>
 
-There are variants which are handy if simpler data structures are required as output:
+`map()` has variants that are more handy if simpler data structures are required as output:
 
-`map_lgl()`, `map_int()`, `map_dbl()`, and `map_chr()` return an atomic vector
+`map_lgl()`, `map_int()`, `map_dbl()`, and `map_chr()` return an atomic vector.
 
 .blockquote.exercise[
 **`r icon::fa("desktop")` Example: `map_*()` &mdash; list in, vector out**
@@ -637,7 +652,7 @@ There are variants which are handy if simpler data structures are required as ou
 
 
 ---
-## `purrr::map_*()` &mdash; Producing Atomic Vectors
+## `purrr::map_*()` &mdash; producing atomic vectors &mdash; ctd.
 
 <br>
 <br>
@@ -645,8 +660,8 @@ There are variants which are handy if simpler data structures are required as ou
 .blockquote.exercise[
 **`r icon::fa("desktop")` Exercise: standard deviations of numeric variables**
 
-Compute the standard deviation of numeric variables in `mtcars` to obtain
-result as numeric vector.
+Compute the sample standard deviation of all numeric variables in `mtcars` and obtain
+the result in a numeric vector.
 
 ```{r, eval = F}
 ___ %>% 
