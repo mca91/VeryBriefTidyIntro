@@ -1,5 +1,5 @@
 ---
-title: "Advanced Econometrics: Statistical Learning"
+title: "Fortgeschrittene Ökonometrie &mdash; Statistical Learning"
 subtitle: "A (very) brief introduction to the tidyverse"
 author: "Martin C. Arnold"
 date: "`r Sys.Date()`"
@@ -25,7 +25,7 @@ output:
       navigation:
         scroll: false # disable slide transitions by scrolling
 params:
-  semester: "Winter 2020"
+  semester: "Summer 2021"
 ---
 
 ```{r setup, include=FALSE}
@@ -124,7 +124,7 @@ class: left, top
 ## `ggplot2` &mdash; a basic example
 
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Exercise: scatterplot
+#### `r icons::fontawesome("desktop")` Exercise: scatterplot
 
 ```{r, echo = TRUE, eval = FALSE}
 library(ggplot2)
@@ -151,7 +151,7 @@ class: left, top
 ## `ggplot2` &mdash; a basic example &mdash; ctd.
 
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Exercise: multiple layers
+#### `r icons::fontawesome("desktop")` Exercise: multiple layers
 
 Add an additional `geom` that performs **lo**cally **e**stimated **s**catterplot **s**moothing.
 
@@ -301,7 +301,7 @@ ggplot(diamonds) +
 <br>
 
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Exercises
+#### `r icons::fontawesome("desktop")` Exercises
   <ol> 
     <li> Use the `mtcars` data set and plot `mpg` vs. `hp`. Add a smoothing line to the plot.
     </li>
@@ -358,7 +358,7 @@ We will often use these verbs in together with the `%>%` operator:
 
 
 .blockquote.exercise[
-**`r icon::fa("desktop")` Example: basic `dplyr` verbs &mdash; 1**
+**`r icons::fontawesome("desktop")` Example: basic `dplyr` verbs &mdash; 1**
 
 1. Select variables `clarity`, `carat`, and `cut` from the `diamonds` dataset, then
 
@@ -383,7 +383,7 @@ summarized <- summarize(filtered, mean_carat = ___(___))
 <br>
 
 .blockquote.exercise[
-**`r icon::fa("desktop")` Example: basic `dplyr` verbs &mdash; 2**
+**`r icons::fontawesome("desktop")` Example: basic `dplyr` verbs &mdash; 2**
 
 Repeat the previous exercise by combining everything using the `%>%` operator.
 
@@ -403,7 +403,7 @@ diamonds %>%
 <br>
 
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Exercises: `dplyr` verbs &mdash; 1
+#### `r icons::fontawesome("desktop")` Exercises: `dplyr` verbs &mdash; 1
 
 
 Chain the following operations using the `%>%` operator:
@@ -421,7 +421,7 @@ Chain the following operations using the `%>%` operator:
 <br>
 
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Exercises: `dplyr` verbs &mdash; 2
+#### `r icons::fontawesome("desktop")` Exercises: `dplyr` verbs &mdash; 2
 
 Chain the following operations using the `%>%` operator:
 
@@ -524,7 +524,7 @@ for(i in <index_set>) {
 <br>
 <br>
 .blockquote.exercise[
-#### `r icon::fa("desktop")` Definition: functional
+#### `r icons::fontawesome("desktop")` Definition: functional
 A functional takes a function (along with data) as input and returns a vector as output.
 
 Prominent base R functionals are the `*apply()` functions.
@@ -581,7 +581,7 @@ Prominent base R functionals are the `*apply()` functions.
 <br>
 
 .blockquote.exercise[
-**`r icon::fa("desktop")` Example: `map()` &mdash; list in, vector out**
+**`r icons::fontawesome("desktop")` Example: `map()` &mdash; list in, vector out**
 
 ```{r}
 # input we want to iterate over
@@ -644,7 +644,7 @@ x %>% map(~ abs(.))
 `map_lgl()`, `map_int()`, `map_dbl()`, and `map_chr()` return an atomic vector.
 
 .blockquote.exercise[
-**`r icon::fa("desktop")` Example: `map_*()` &mdash; list in, vector out**
+**`r icons::fontawesome("desktop")` Example: `map_*()` &mdash; list in, vector out**
 ![:image 50%](img/map-list.png)
 ![:source 2019](Wickham)
 ]
@@ -665,7 +665,7 @@ x %>% map(~ abs(.))
 <br>
 
 .blockquote.exercise[
-**`r icon::fa("desktop")` Exercise: standard deviations of numeric variables**
+**`r icons::fontawesome("desktop")` Exercise: standard deviations of numeric variables**
 
 Compute the sample standard deviation of all numeric variables in `mtcars` and obtain
 the result in a numeric vector.

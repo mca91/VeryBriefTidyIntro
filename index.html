@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Advanced Econometrics: Statistical Learning</title>
+    <title>Fortgeschrittene Ökonometrie — Statistical Learning</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin C. Arnold" />
-    <meta name="date" content="2020-11-02" />
+    <meta name="date" content="2021-04-26" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
     <link href="index_files/remark-css/default.css" rel="stylesheet" />
-    <link href="index_files/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         TeX: { equationNumbers: { autoNumber: "AMS" } },
@@ -38,11 +37,11 @@
 class: title-slide center middle
 
 &lt;br&gt;
-# Advanced Econometrics: Statistical Learning
+# Fortgeschrittene Ökonometrie &amp;mdash; Statistical Learning
 ## A (very) brief introduction to the tidyverse
 ### Martin C. Arnold
 &lt;br&gt;
-### Winter 2020
+### Summer 2021
 
 ---
 exclude: true
@@ -132,7 +131,7 @@ class: left, top
 ## `ggplot2` &amp;mdash; a basic example
 
 .blockquote.exercise[
-#### <i class="fas  fa-desktop "></i> Exercise: scatterplot
+#### &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Exercise: scatterplot
 
 
 ```r
@@ -162,7 +161,7 @@ class: left, top
 ## `ggplot2` &amp;mdash; a basic example &amp;mdash; ctd.
 
 .blockquote.exercise[
-#### <i class="fas  fa-desktop "></i> Exercise: multiple layers
+#### &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Exercise: multiple layers
 
 Add an additional `geom` that performs **lo**cally **e**stimated **s**catterplot **s**moothing.
 
@@ -280,7 +279,7 @@ We may use facetting to get a less cluttered result:
 &lt;br&gt;
 
 .blockquote.exercise[
-#### <i class="fas  fa-desktop "></i> Exercises
+#### &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Exercises
   &lt;ol&gt; 
     &lt;li&gt; Use the `mtcars` data set and plot `mpg` vs. `hp`. Add a smoothing line to the plot.
     &lt;/li&gt;
@@ -337,7 +336,7 @@ We will often use these verbs in together with the `%&gt;%` operator:
 
 
 .blockquote.exercise[
-**<i class="fas  fa-desktop "></i> Example: basic `dplyr` verbs &amp;mdash; 1**
+**&lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Example: basic `dplyr` verbs &amp;mdash; 1**
 
 1. Select variables `clarity`, `carat`, and `cut` from the `diamonds` dataset, then
 
@@ -363,7 +362,7 @@ summarized &lt;- summarize(filtered, mean_carat = ___(___))
 &lt;br&gt;
 
 .blockquote.exercise[
-**<i class="fas  fa-desktop "></i> Example: basic `dplyr` verbs &amp;mdash; 2**
+**&lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Example: basic `dplyr` verbs &amp;mdash; 2**
 
 Repeat the previous exercise by combining everything using the `%&gt;%` operator.
 
@@ -384,7 +383,7 @@ diamonds %&gt;%
 &lt;br&gt;
 
 .blockquote.exercise[
-#### <i class="fas  fa-desktop "></i> Exercises: `dplyr` verbs &amp;mdash; 1
+#### &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Exercises: `dplyr` verbs &amp;mdash; 1
 
 
 Chain the following operations using the `%&gt;%` operator:
@@ -402,7 +401,7 @@ Chain the following operations using the `%&gt;%` operator:
 &lt;br&gt;
 
 .blockquote.exercise[
-#### <i class="fas  fa-desktop "></i> Exercises: `dplyr` verbs &amp;mdash; 2
+#### &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Exercises: `dplyr` verbs &amp;mdash; 2
 
 Chain the following operations using the `%&gt;%` operator:
 
@@ -518,7 +517,7 @@ for(i in &lt;index_set&gt;) {
 &lt;br&gt;
 &lt;br&gt;
 .blockquote.exercise[
-#### <i class="fas  fa-desktop "></i> Definition: functional
+#### &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Definition: functional
 A functional takes a function (along with data) as input and returns a vector as output.
 
 Prominent base R functionals are the `*apply()` functions.
@@ -575,7 +574,7 @@ Prominent base R functionals are the `*apply()` functions.
 &lt;br&gt;
 
 .blockquote.exercise[
-**<i class="fas  fa-desktop "></i> Example: `map()` &amp;mdash; list in, vector out**
+**&lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Example: `map()` &amp;mdash; list in, vector out**
 
 
 ```r
@@ -664,7 +663,7 @@ x %&gt;% map(~ abs(.))
 `map_lgl()`, `map_int()`, `map_dbl()`, and `map_chr()` return an atomic vector.
 
 .blockquote.exercise[
-**<i class="fas  fa-desktop "></i> Example: `map_*()` &amp;mdash; list in, vector out**
+**&lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Example: `map_*()` &amp;mdash; list in, vector out**
 ![:image 50%](img/map-list.png)
 ![:source 2019](Wickham)
 ]
@@ -685,7 +684,7 @@ x %&gt;% map(~ abs(.))
 &lt;br&gt;
 
 .blockquote.exercise[
-**<i class="fas  fa-desktop "></i> Exercise: standard deviations of numeric variables**
+**&lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"&gt;&lt;/path&gt;&lt;/svg&gt; Exercise: standard deviations of numeric variables**
 
 Compute the sample standard deviation of all numeric variables in `mtcars` and obtain
 the result in a numeric vector.
